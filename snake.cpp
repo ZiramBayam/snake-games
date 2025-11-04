@@ -102,17 +102,17 @@ int main() {
             // Arrow keys come as two codes (224 then code)
             if (ch == 224) {
                 int arrow = _getch();
-                if (arrow == 72 && dir != DOWN) dir = UP;        // Up
-                else if (arrow == 80 && dir != UP) dir = DOWN;   // Down
-                else if (arrow == 75 && dir != RIGHT) dir = LEFT;// Left
-                else if (arrow == 77 && dir != LEFT) dir = RIGHT;// Right
+                if (arrow == 72 && dir != DOWN) dir = UP;        
+                else if (arrow == 80 && dir != UP) dir = DOWN;   
+                else if (arrow == 75 && dir != RIGHT) dir = LEFT;
+                else if (arrow == 77 && dir != LEFT) dir = RIGHT;
             } else {
-                // WASD fallback
+        
                 if ((ch == 'w' || ch == 'W') && dir != DOWN) dir = UP;
                 else if ((ch == 's' || ch == 'S') && dir != UP) dir = DOWN;
                 else if ((ch == 'a' || ch == 'A') && dir != RIGHT) dir = LEFT;
                 else if ((ch == 'd' || ch == 'D') && dir != LEFT) dir = RIGHT;
-                else if (ch == 27) { // ESC to quit
+                else if (ch == 27) {
                     gameOver = true;
                 }
             }
@@ -153,7 +153,7 @@ int main() {
             food = randomEmptyCell(snake);
             drawCell(food, '*');
         } else {
-            // Erase tail on screen
+            // Erase tail on screen 
             Point tail = snake.back();
             snake.pop_back();
             drawCell(tail, ' ');
